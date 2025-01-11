@@ -1,0 +1,43 @@
+import java.util.*;
+class Combination
+{
+    int n;
+    int r;
+    Combination()
+    {
+        n=0;
+        r=0;
+    }
+    void readInput()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter two numbers");
+        n=sc.nextInt();
+        r=sc.nextInt();
+    }
+    int Factorial(int n)
+    {
+        if(n==1)
+        {
+            return 1;
+        }
+        else
+        {
+            return (n* Factorial(n-1));
+        }
+    }
+    void compute()
+    {
+        int a=Factorial(n);
+        int b=Factorial(r);
+        int c=Factorial(n-r);
+        int p=a/b*c;
+        System.out.println("Combination is "+p);
+    }
+    void main()
+    {
+        Combination obj=new Combination();
+        obj.compute();
+        obj.readInput();
+    }
+}
